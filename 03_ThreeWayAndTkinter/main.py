@@ -3,6 +3,7 @@
 import random
 import time
 from functools import partial
+
 import tkinter as tk
 from tkinter import messagebox as mb
 
@@ -88,7 +89,6 @@ class Application(tk.Frame):
     def process_number_press(self, val):
         val_pos = get_val_pos(self.game_state, val)
         empty_pos = get_val_pos(self.game_state, 0)
-        print("poses", val_pos, empty_pos)
         delta = (empty_pos[0] - val_pos[0], empty_pos[1] - val_pos[1])
         if delta not in POSSIBLE_MOVES:
             return
